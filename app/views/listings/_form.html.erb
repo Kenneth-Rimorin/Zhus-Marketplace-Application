@@ -1,0 +1,49 @@
+<%= form_with(model: @listing, local: true) do |form| %>
+
+    <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    </div>
+
+    <div class="field">
+    <%= form.label :brand_id %>
+    <%= form.select(:brand_id, @brands.map{|b| [b.name, b.id]}) %>
+    </div>
+
+    <% @categories.each do |option| %>
+        <div  class="field">
+            <%= form.radio_button :category, option %>
+            <%= form.label "category_#{option}".to_sym, option %>
+        <div>
+    <% end %>
+
+    <div  class="field">
+    <%= form.label :color %>
+    <%= form.text_field :color %>
+    </div>
+
+    <div  class="field">
+    <%= form.label :size %>
+    <%= form.text_field :size %>
+    </div>
+
+    <div  class="field">
+    <%= form.label :price %>
+    <%= form.number_field :price %>
+    </div>
+
+    <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+    </div>
+
+    <div  class="field">
+    <%= form.label :picture %> <%= form.file_field :picture, accept:
+    'image/png,image/gif,image/jpeg,image/jpg' %>
+    </div>
+
+    <div  class="field">
+    <%= form.submit %>
+    </div>
+
+<% end %>

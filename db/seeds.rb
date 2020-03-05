@@ -21,3 +21,5 @@ brands.each do |brand|
     puts "#{brand} created"
 
 end
+
+Listing.create(name:"Nike React Element", color:"Red/black",size:12, price:100, description:"Not used, in very good condition", brand:Brand.find(1), category:"casual")

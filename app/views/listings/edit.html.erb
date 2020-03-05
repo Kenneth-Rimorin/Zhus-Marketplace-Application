@@ -1,0 +1,64 @@
+
+<%= render :partial => "pages/nav" %>
+<%#= -------------Slider%>
+<div id="slides" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<ul class="carousel-indicators">
+    <li data-target="#slides" data-slide-to="0" class="active"></li>
+    <li data-target="#slides" data-slide-to="1" ></li>
+</ul>
+    <div class="carousel-item active">
+    <%= image_tag('background1.jpg')%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag('background2.jpg')%>
+</div>
+</div>
+
+<%#= -------------jumbotron%>
+<div class="container-fluid">
+<div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+    <h1 class="display-4">About Zhus</h1>
+    <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam odio vel ipsum sodales, eget pellentesque neque porttitor. Aliquam purus felis, auctor sed neque vel,
+    </p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-9 col-xl-4">
+    <a href="#"><button type="button" class="btn btn-outline-primary btn-lg">More</button></a>
+    </div>
+</div>
+</div>
+
+<%#= -------------welcomesection%>
+<div class="container-fluid padding">
+<div class="row welcome text-center">
+    <div class="col-12">
+        <h1 class="display-4"> User Panel</h1>
+    </div>
+    <hr>
+    <div class="col-12">
+    <p class="lead"></p>
+    </div>
+</div>
+</div> 
+
+<%#= -------------listingsection%>
+
+<div class="container-fluid">
+<div class="row mx-md-n5  text-center ">
+<div class="col px-md-5 col-xs-12 col-sm-12 col-md-4 col-lg-9 col-xl-4">
+<div class="p-3 border bg-light">Manage Account</div>
+<div class="p-3 border bg-light">Create Listing</div>
+</div>
+    <div class="col px-md-5">
+        <div class="p-3 border bg-light">
+        Created Listings
+
+        
+        <%= render "form", listing: @listing, brand: @brands, category:@categories %>
+        </div>
+    </div>
+</div>
+<hr class="my-4">
+</div>
+

@@ -1,0 +1,67 @@
+
+<%= render :partial => "pages/nav" %>
+
+<%#= -------------Slider%>
+<div id="slides" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner">
+<ul class="carousel-indicators">
+    <li data-target="#slides" data-slide-to="0" class="active"></li>
+    <li data-target="#slides" data-slide-to="1" ></li>
+</ul>
+    <div class="carousel-item active">
+    <%= image_tag('background1.jpg')%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag('background2.jpg')%>
+</div>
+</div>
+
+<%#= -------------jumbotron%>
+<div class="container-fluid mb-5">
+<div class="row jumbotron">
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+    <h1 class="display-4">About Zhus</h1>
+    <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam odio vel ipsum sodales, eget pellentesque neque porttitor. Aliquam purus felis, auctor sed neque vel,
+    </p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-9 col-xl-4">
+    <a href="#"><button type="button" class="btn btn-outline-primary btn-lg">More</button></a>
+    </div>
+</div>
+</div>
+
+<%#= -------------listingsection%>
+<div class="container mb-5">
+    <div class="row ">
+        <div class= "col text-center border rounded  mr-5 ">
+            <%= image_tag (@listing.picture),size:'400x350' if @listing.picture.attached? %>
+            
+        </div>
+        <div class= "col">
+        <h1><%= @listing.name.upcase %></h1>
+        <p class="lead">Brand: <%= @listing.brand.name %></p>
+        <p class="lead">Category: <%= @listing.category %></p>
+        <p class="lead">Color: <%= @listing.color %></p>
+        <p class="lead">Size: <%= @listing.size %></p>
+        <p class="lead">Description: <%= @listing.description %></p>
+
+        <% if user_signed_in?%>
+ 
+            <% if current_user.id == @listing.user.id%>
+                <%= link_to "Edit", edit_listing_path, class:"btn btn-primary" %>
+                <%= link_to "Delete", @listing, class:"btn btn-primary", method: :delete, 
+                data: { confirm: "Are you sure?" } %>
+            <% else %>
+                <%#= link_to "Edit", edit_listing_path, class:"btn btn-primary" %>
+                <%#= link_to "Delete", @listing, class:"btn btn-primary", method: :delete, 
+                data: { confirm: "Are you sure?" } %>
+            <% end %>
+        <% else %>
+            <%= link_to "Buy", edit_listing_path, class:"btn btn-primary" %>
+            <%= link_to "ADD TO CART", edit_listing_path, class:"btn btn-primary" %>
+        <% end %>
+
+    </div>
+    </div>
+</div>
+

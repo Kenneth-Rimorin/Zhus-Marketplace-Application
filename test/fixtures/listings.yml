@@ -2,14 +2,18 @@
 
 one:
   name: MyString
+  brand: one
   color: MyString
   size: 1
   price: 1
+  category: 1
   description: MyText
 
 two:
   name: MyString
+  brand: two
   color: MyString
   size: 1
   price: 1
+  category: 1
   description: MyText

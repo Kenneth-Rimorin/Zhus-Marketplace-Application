@@ -1,0 +1,50 @@
+<%= render :partial => "pages/nav" %>
+
+<div class="container mt-5">
+<div class="row">
+  <div class="col mr-5 mt-5">
+
+  <%= image_tag 'Zhus_logo.png', size:"450x360"%>
+  
+  </div>
+  <div class="col border border-dark rounded">
+
+  <h1 class="lead display-4 text-center">Sign up</h1>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+  <%= f.label :address %><br />
+  <%= f.text_field :address %>
+  </div>
+
+  <div class="actions mt-5">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
