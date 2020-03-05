@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'payments/success'
   devise_for :users, controllers: { registrations: "registrations" }
   get '/', to: "pages#index", as: "root"
   get "/", to: "pages#more"
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   delete "/:id", to: "listings#destroy"
   get "/:id/edit", to: "listings#edit", as: "edit_listing"
   get "/manage", to: "listings#manage", as: "manage_listing"
+
+  get "/payments/success", to: "payments#success"
 
 
   get "/:path", to: "pages#not_found"
