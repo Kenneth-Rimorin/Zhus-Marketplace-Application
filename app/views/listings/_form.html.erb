@@ -1,5 +1,9 @@
 <%= form_with(model: @listing, local: true) do |form| %>
 
+    <div class="container mb-5">
+    <div class="row-12">
+
+    <div class=col> 
     <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -32,6 +36,10 @@
     <%= form.number_field :price %>
     </div>
 
+    </div>
+
+    <div class="col">    
+
     <div class="field">
     <%= form.label :description %>
     <%= form.text_area :description %>
@@ -44,6 +52,10 @@
 
     <div  class="field">
     <%= form.submit %>
+    </div>
+
+    </div>
+
     </div>
 
 <% end %>
