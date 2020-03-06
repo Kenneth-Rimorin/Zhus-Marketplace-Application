@@ -66,8 +66,10 @@
                 <%= link_to "Logout", destroy_user_session_path, method: 'delete' , class:"btn btn-outline-secondary btn-space"%>
                 </li>
 
-                <li>
-                <%= image_tag('cart.png', :size =>'30x25')%>
+                <li class="nav-item">
+                <div class="m-auto">
+                <%= link_to image_tag('cart.png', :size =>'30x25') %>
+                </div>
                 </li>
 
             <% else %>

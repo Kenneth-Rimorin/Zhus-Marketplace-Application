@@ -14,9 +14,54 @@
  */
 
  @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+ @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html,body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Poppins',sans-serif;
+    color: #222;
+}
+
+.navbar{
+    padding: .8rem
+}
+
+.navbar-nav li{
+    padding-right: 20px;
+}
+
+.carousel-inner img{
+    width: 100%;
+    height: 100%;
+}
 
 
+.caro{
+ 
+  max-width: 400px;
+  max-height: 500px;
 
+}
+
+.carousel-caption{
+    position: absolute;
+    top:50%;
+    transform: translate(-52%,-100%);
+    text-shadow: 1px 1px 10px #000;
+}
+
+.jumbotron{
+    padding: 1rem;
+    border-radius: 0;
+}
+
+.social a {
+    font-size: 4.5em;
+    padding: 3rem;
+}
 
 .btn-space {
     margin-right: 10px;
@@ -28,3 +73,13 @@
     margin: auto;
 }
 
+.footer {
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    padding-top: 5rem;
+}
+
+hr.light{
+    border-top:1px solid #d5d5d5;
+    width: 75%;
+}

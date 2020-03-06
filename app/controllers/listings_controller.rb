@@ -1,11 +1,13 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
   before_action :set_brands_and_categories, only: [:new, :edit]
-  before_action :set_user_listing, only: [:edit, :update, :destroy]
+  before_action :set_user_listing, only: [:edit, :update, :destroy, :cart]
   before_action :authenticate_user! 
   skip_before_action :authenticate_user!, :only => [:show]
 
 
+  def cart
+  end
 
   def index
     @listing = Listing.all

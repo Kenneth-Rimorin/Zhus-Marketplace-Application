@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   delete "/:id", to: "listings#destroy"
   get "/:id/edit", to: "listings#edit", as: "edit_listing"
   get "/manage", to: "listings#manage", as: "manage_listing"
+  get "/:id/cart", to: "listings#cart", as: "cart"
 
   get "/payments/success", to: "payments#success"
 

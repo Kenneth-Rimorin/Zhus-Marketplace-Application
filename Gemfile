@@ -72,3 +72,5 @@ gem "aws-sdk-s3", "~> 1.60"
 gem "stripe", "~> 5.17"
 
 gem "ransack", "~> 2.3"
+gem 'font-awesome-sass'
+
