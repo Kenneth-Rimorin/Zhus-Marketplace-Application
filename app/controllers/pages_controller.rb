@@ -3,6 +3,8 @@ class PagesController < ApplicationController
   def index
 
     @listings = Listing.all
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result.includes(brand: [])
 
   end
 

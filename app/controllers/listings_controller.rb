@@ -14,6 +14,11 @@ class ListingsController < ApplicationController
   def show
     @listings = Listing.all
 
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result.includes(brand: [])
+
+    if current_user
+
     session = Stripe::Checkout::Session.create(
       payment_method_types: ['card'],
       customer_email: current_user.email,
@@ -35,6 +40,7 @@ class ListingsController < ApplicationController
   )
 
   @session_id = session.id
+    end
   end
 
   def new
