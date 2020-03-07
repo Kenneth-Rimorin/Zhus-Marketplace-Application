@@ -20,7 +20,7 @@
     <div class="carousel-item">
     <%= image_tag('background2.jpg')%>
     <div class="carousel-caption">
-    <%= image_tag('Zhus_logo_2.png', class:"caro")%>
+    <%#= image_tag('Zhus_logo_2.png', class:"caro")%>
     </div>
 </div>
 </div>
@@ -31,7 +31,7 @@
 <div class="row jumbotron">
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
     <h1 class="display-4">About Zhus</h1>
-    <p class="lead"> KENNETTHH  ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam odio vel ipsum sodales, eget pellentesque neque porttitor. Aliquam purus felis, auctor sed neque vel,
+    <p class="lead"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec mauris arcu. Curabitur ac nisi vitae enim ultricies tincidunt gravida non ligula. Aenean consectetur odio vitae libero egestas facilisis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque elementum elit id elementum sagittis. Donec malesuada lorem et faucibus facilisis.
     </p>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-9 col-xl-4">
@@ -56,34 +56,37 @@
 <%#= -------------listingsection%>
 
 <div class="container">
-    <div class="row text-center">
-    <% @listings.each do |listing| %>
-        <div class="col-xs-12 col-md-4 col-lg-4 mt-5 mb-5 d-flex align-items-stretch">
-            <div class="card" style="width: 18rem;">
-            <%= image_tag (listing.picture), class:"card-img-top p-3" if listing.picture.attached?%>
-                <div class="card-body">
-                <h2 class="card-title"><%= listing.name.upcase %></h2>
-                <p class="card-text ">AUD: $<%= listing.price %></p>
-                <%= link_to "more",listing_path(listing.id), class:"btn btn-primary"%>
+
+      <div class="row text-center">
+        <% @listings.each do |listing| %>
+            <div class="col-xs-12 col-md-4 col-lg-4 mt-5 mb-5 d-flex align-items-stretch">
+                <div class="card" style="width: 18rem;">
+                <%= image_tag (listing.picture), class:"card-img-top p-3" if listing.picture.attached?%>
+                    <div class="card-body">
+                    <h2 class="card-title"><%= listing.name.upcase %></h2>
+                    <p class="card-text ">AUD: $<%= listing.price %></p>
+                    <%= link_to "more",listing_path(listing.id), class:"btn btn-primary"%>
+                    </div>
                 </div>
             </div>
-        </div>
-    <% end %>
-    </div>
+        <% end %>
+      </div>
+      
+
 </div>
 
 <%#= -------------background-------------%>
 
 <figure>
-    <div class="fixed-warp">
-        <div id="fixed">
-        </div>
-    </div>
+<div class="fixed-wrap mb-5">dsadasd
+      <div id="fixed">
+      </div>
+</div>
 </figure>
 
 <%#= -------------Featured Categories-------------%>
 
-<div class="container-fluid padding jumbotron">
+<div class="container-fluid gallery padding jumbotron">
 <div class="row welcome text-center">
         <div class="col-12">
             <h1 class="lead display-5">Featured Gallery</h1>
@@ -97,7 +100,7 @@
           <div class="card">
           <%=image_tag 'c1.jpg',class:"card-img-top"%>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Casual</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
           </div>
@@ -107,7 +110,7 @@
           <div class="card">
           <%=image_tag 'c4.jpg',class:"card-img-top"%>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Basketball</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
           </div>
@@ -117,7 +120,7 @@
           <div class="card">
           <%=image_tag 'c5.jpg',class:"card-img-top"%>
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
+              <h5 class="card-title">Running</h5>
               <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
             </div>
           </div>
@@ -153,41 +156,41 @@
 
 <%#= -------------footer------------%>
 <div class="container-fluid footer padding mt-5">
-<div class="row text-center text-justify">
+<div class="row text-center">
 
         <div class="col-md-4">
-        <h4>Legal</h4>
-        Tips & help</p>
-        <p>About Gumtree</p>
+        <h4>Legal</h4><br>
+        <p>Tips & help</p>
+        <p>About Zhus</p>
         <p>Help</p>
         <p>Contact Us</p>
-        <p>eBay Classifieds</p>
+        <p>Zhuz Classifieds</p>
         <p>StubHub</p>
         <p>Register</p>
         </div>
 
         
         <div class="col-md-4">
-        <h4>Zhus Favorites</h4>
-        Tips & help</p>
-        <p>About Gumtree</p>
-        <p>Help</p>
-        <p>Contact Us</p>
-        <p>eBay Classifieds</p>
-        <p>StubHub</p>
-        <p>Register</p>
+        <h4>Top Categories</h4><br>
+        <p>Tips & help</p>
+        <p>Casual</p>
+        <p>Basketball</p>
+        <p>Running</p>
+        <p>Formal</p>
+        <p>Skate & Canvas</p>
+        <p>Other</p>
         </div>
 
         
         <div class="col-md-4">
-        <h4>Top Categories</h4>
-        Tips & help</p>
-        <p>About Gumtree</p>
-        <p>Help</p>
-        <p>Contact Us</p>
-        <p>eBay Classifieds</p>
-        <p>StubHub</p>
-        <p>Register</p>
+        <h4>Zhus Favorites</h4><br>
+        <p>Nike</p>
+        <p>Adidas</p>
+        <p>Converse</p>
+        <p>Jordan</p>
+        <p>Vans</p>
+        <p>New Balance</p>
+        <p>Under Armour</p>
         </div>
         <div class="col-12">
         <hr class="light">

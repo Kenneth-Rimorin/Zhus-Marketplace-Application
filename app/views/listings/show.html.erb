@@ -37,7 +37,7 @@
             <%= image_tag (@listing.picture),size:'400x350' if @listing.picture.attached? %>
             
         </div>
-        <div class= "col">
+        <div class= "col" id="item">
         <h1><%= @listing.name.upcase %></h1>
         <p class="lead">Brand: <%= @listing.brand.name %></p>
         <p class="lead">Category: <%= @listing.category %></p>

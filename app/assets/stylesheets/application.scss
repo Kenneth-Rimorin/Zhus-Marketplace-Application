@@ -41,21 +41,32 @@ html,body{
 
 .caro{
  
-  max-width: 400px;
-  max-height: 500px;
+  max-width: 420px;
+  max-height: 660px;
 
 }
 
 .carousel-caption{
     position: absolute;
     top:50%;
-    transform: translate(-52%,-100%);
+    transform: translate(-25%,-75%);
     text-shadow: 1px 1px 10px #000;
 }
 
 .jumbotron{
     padding: 1rem;
     border-radius: 0;
+}
+
+.bg{
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+
+}
+
+.gallery {
+    padding-top: 2rem;
 }
 
 .social a {
@@ -81,5 +92,41 @@ html,body{
 
 hr.light{
     border-top:1px solid #d5d5d5;
-    width: 75%;
+        width: 100%;
 }
+
+
+
+figure {
+    position: relative;
+    width: 100%;
+    height: 60%;
+    margin: 0!important;
+    padding: 15rem;
+  }
+
+  .fixed-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    clip: rect(0, 140rem, 30rem, 0);
+    
+    
+  }
+
+  #fixed {
+    background-image: url('scroll.jpg');
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+  }

@@ -4,6 +4,7 @@ class ListingsController < ApplicationController
   before_action :set_user_listing, only: [:edit, :update, :destroy, :cart]
   before_action :authenticate_user! 
   skip_before_action :authenticate_user!, :only => [:show]
+  before_action :ransack, only: [:edit, :update, :destroy, :cart, :index, :show, :new, :create]
 
 
   def cart
@@ -15,9 +16,6 @@ class ListingsController < ApplicationController
 
   def show
     @listings = Listing.all
-
-    @q = Listing.ransack(params[:q])
-    @listings = @q.result.includes(brand: [])
 
     if current_user
 
@@ -84,6 +82,11 @@ class ListingsController < ApplicationController
   
 
   private
+
+  def ransack
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result.includes(brand: [])
+  end
 
   def set_listing
     id = params[:id]
