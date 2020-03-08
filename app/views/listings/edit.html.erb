@@ -1,19 +1,7 @@
 
 <%= render :partial => "pages/nav" %>
-<%#= -------------Slider%>
-<div id="slides" class="carousel slide" data-ride="carousel">
-<div class="carousel-inner">
-<ul class="carousel-indicators">
-    <li data-target="#slides" data-slide-to="0" class="active"></li>
-    <li data-target="#slides" data-slide-to="1" ></li>
-</ul>
-    <div class="carousel-item active">
-    <%= image_tag('background1.jpg')%>
-    </div>
-    <div class="carousel-item">
-    <%= image_tag('background2.jpg')%>
-</div>
-</div>
+<%= render :partial => "shared/carousel" %>
+
 
 <%#= -------------jumbotron%>
 <div class="container-fluid">
