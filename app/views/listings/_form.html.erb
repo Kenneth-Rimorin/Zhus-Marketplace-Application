@@ -3,59 +3,76 @@
     <div class="container mb-5">
     <div class="row-12">
 
-    <div class=col> 
-    <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-    </div>
+    <table class="table">
+    <thead class="thead-dark">
 
-    <div class="field">
-    <%= form.label :brand_id %>
-    <%= form.select(:brand_id, @brands.map{|b| [b.name, b.id]}) %>
-    </div>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Zhus Listing</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
 
-    <% @categories.each do |option| %>
-        <div  class="field">
-            <%= form.radio_button :category, option %>
-            <%= form.label "category_#{option}".to_sym, option %>
-        <div>
-    <% end %>
+    <tr>
+      <th scope="row"></th>
+      <td> <%= form.label :name %></td>
+      <td> <%= form.text_field :name %></td>
 
-    <div  class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
-    </div>
+    </tr>
 
-    <div  class="field">
-    <%= form.label :size %>
-    <%= form.text_field :size %>
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :brand_id %></td>
+    <td> <%= form.select(:brand_id, @brands.map{|b| [b.name, b.id]}) %></td>
+    </tr>
 
-    <div  class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :category %></td>
+    <td> <%= form.select(:category, @categories) %></td>
+    </tr>
 
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :color %></td>
+    <td> <%= form.text_field :color %></td>
+    </tr>
 
-    <div class="col">    
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :size %></td>
+    <td> <%= form.text_field :size %></td>
+    </tr>
 
-    <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :price %></td>
+    <td> <%= form.number_field :price %></td>
+    </tr>
+    
+    <tr>
+    <th scope="row"></th>
+    <td> <%= form.label :description %></td>
+    <td> <%= form.text_area :description %></td>
+    </tr>
 
-    <div  class="field">
-    <%= form.label :picture %> <%= form.file_field :picture, accept:
-    'image/png,image/gif,image/jpeg,image/jpg' %>
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td>  <%= form.label :picture %> </td>
+    <td> <%= form.file_field :picture, accept:
+    'image/png,image/gif,image/jpeg,image/jpg' %></td>
+    </tr>
 
-    <div  class="field">
-    <%= form.submit %>
-    </div>
+    <tr>
+    <th scope="row"></th>
+    <td>  <%= form.label :Submit %> </td>
+    <td> <%= form.submit %></td>
+    </tr>
 
-    </div>
 
-    </div>
+  </tbody>
+</table>
 
 <% end %>
+

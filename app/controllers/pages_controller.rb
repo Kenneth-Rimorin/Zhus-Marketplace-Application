@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
     @listings = Listing.all
     @q = Listing.ransack(params[:q])
-    @listings = @q.result.includes(brand: [])
+    @listings = @q.result.includes(:brand)
 
   end
 

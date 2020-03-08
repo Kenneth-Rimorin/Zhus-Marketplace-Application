@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   get "/:id/cart", to: "listings#cart", as: "cart"
 
   get "/payments/success", to: "payments#success"
+  post "/:id", to: "payments#sold"
 
 
   get "/:path", to: "pages#not_found"
